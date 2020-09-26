@@ -131,7 +131,7 @@ a {
         font-size: 12px;
     }
     &__btn {
-        margin-left: 100%;
+        
         background: none;
         border: none;
         &:hover {
@@ -193,47 +193,49 @@ a {
     }
 
     &__btn {
-        color: $col-white;
-        background-color: $col-sec;
-        border: none;
-        font-size: 18px;
-        font-weight: 700;
-        text-transform: uppercase;
         padding: 1.5rem 5rem;
-
-        position: relative;
-        overflow: hidden;
-        
-        &:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 1.5em;
-            height: 100%;
-            background-color: rgba(#fff, 0.6);
-            transform: translateX(-4em) skewX(-45deg);
-            animation: move-light 3.5s linear infinite;
-            
-        }
-        &:hover,&:focus,&:active {
-            outline: none;
-            animation: main-button 1s linear infinite;
-        }
     }
 }
+.button-main {
+    color: $col-white;
+    background-color: $col-sec;
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.15);
 
+    position: relative;
+    overflow: hidden;
+    
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1.5em;
+        height: 100%;
+        background-color: rgba(#fff, 0.6);
+        transform: translateX(-4em) skewX(-45deg);
+        animation: move-light 3.5s linear infinite;
+        
+    }
+    &:hover,&:focus,&:active {
+        outline: none;
+        animation: main-button 1s linear infinite;
+    }
+}
 .about {
 
     &__top {
-        height: 295px;
+        height: 18rem;
     }
 
     &__text {
     }
 
     &__bottom {
-        height: 377px;
+        height: 23rem;
     }
 
     &__list {
@@ -282,6 +284,31 @@ a {
         line-height: 25px;
     }
 }
+.works {
+    background-color: $col-header;
+    height: 1270px;
+
+    &__content {
+    }
+
+    &__top {
+        height: 306px;
+    }
+
+    &__slider {
+        height: (1270px-306px);
+    }
+}
+.call {
+    height: 483px;
+
+    &__btn {
+        font-size: 15px;
+        padding: 1rem 1.7rem;
+    }
+}
+
+
 
 
 

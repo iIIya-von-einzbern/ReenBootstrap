@@ -87,7 +87,6 @@ a:hover {
   font-size: 12px;
 }
 .header-main__btn {
-  margin-left: 100%;
   background: none;
   border: none;
 }
@@ -139,17 +138,21 @@ a:hover {
   line-height: 33px;
 }
 .banner__btn {
+  padding: 1.5rem 5rem;
+}
+
+.button-main {
   color: #fff;
   background-color: #00bc9c;
   border: none;
   font-size: 18px;
   font-weight: 700;
   text-transform: uppercase;
-  padding: 1.5rem 5rem;
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.15);
   position: relative;
   overflow: hidden;
 }
-.banner__btn:before {
+.button-main:before {
   content: "";
   position: absolute;
   top: 0;
@@ -160,16 +163,16 @@ a:hover {
   transform: translateX(-4em) skewX(-45deg);
   animation: move-light 3.5s linear infinite;
 }
-.banner__btn:hover, .banner__btn:focus, .banner__btn:active {
+.button-main:hover, .button-main:focus, .button-main:active {
   outline: none;
   animation: main-button 1s linear infinite;
 }
 
 .about__top {
-  height: 295px;
+  height: 18rem;
 }
 .about__bottom {
-  height: 377px;
+  height: 23rem;
 }
 .about__list {
   list-style-type: none;
@@ -201,6 +204,25 @@ a:hover {
   font-size: 16px;
   letter-spacing: 0.16px;
   line-height: 25px;
+}
+
+.works {
+  background-color: #f5f7fa;
+  height: 1270px;
+}
+.works__top {
+  height: 306px;
+}
+.works__slider {
+  height: 964px;
+}
+
+.call {
+  height: 483px;
+}
+.call__btn {
+  font-size: 15px;
+  padding: 1rem 1.7rem;
 }
 
 /*stuff*/
