@@ -236,6 +236,39 @@ body {
     }
 }
 //Hero
+.main-button {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.45px;
+    color: #fff;
+    // border-radius: 0.3rem;
+    background-color: #00bc9c;
+    border: none;
+    padding: 1rem 3rem;
+
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+       content: ''; 
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 1.5em;
+       height: 100%;
+       background-color: rgba($col-white, 0.5);
+
+       transform: translateX(-4em) skewX(-45deg);
+
+       animation: move-light 4s infinite;
+    }
+    &:hover,&:focus,&:active {
+        outline: none;
+    }
+
+
+}
 
 .hero {
     &__item {
@@ -289,24 +322,172 @@ body {
         }
     }
 
+    &__button {
+        transition: $anim-time;
+        transition-delay: 0.6s;
+        &>span {
+            display: block;
+            position: absolute;
+            background-color: $col-white;
+            
+            
+
+            &:nth-child(1) {
+                left: 0;
+                bottom: 0;
+                width: 3px;
+                height: 100%;
+                transform: scaleY(0);
+                transform-origin: top;
+                transition: transform $anim-time;
+
+            }
+
+            &:nth-child(2) {
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 3px;
+                transform: scaleX(0);
+                transform-origin: right;
+                transition: transform $anim-time;
+
+            }
+            &:nth-child(3) {
+                right: 0;
+                bottom: 0;
+                width: 3px;
+                height: 100%;
+                transform: scaleY(0);
+                transform-origin: top;
+                transition: transform $anim-time;
+                transition-delay: $anim-time;
+            }
+            &:nth-child(4) {
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 3px;
+                transform: scaleX(0);
+                transform-origin: right;
+                transition: transform $anim-time;
+                transition-delay: $anim-time;
+            }
+        }
+        &:hover,&:focus,&:active {
+            background-color: transparent;
+            &>span:nth-child(1) {
+                transform: scaleY(1);
+                transform-origin: bottom;
+                transition: transform $anim-time;
+                
+            }
+            &>span:nth-child(2) {
+                transform: scaleX(1);
+                transform-origin: left;
+                transition: transform $anim-time;
+                
+            }
+            &>span:nth-child(3) {
+                transform: scaleY(1);
+                transform-origin: bottom;
+                transition: transform $anim-time;
+                transition-delay: $anim-time;
+            }
+            &>span:nth-child(4) {
+                transform: scaleX(1);
+                transform-origin: left;
+                transition: transform $anim-time;
+                transition-delay: $anim-time;
+            }
+        }
+
+        @media only screen and (max-height: 721px){
+            font-size: 1rem;
+            padding: .8rem 1.8rem;
+        }
+    }
+
 }
-.main-button {
-    font-size: 1.1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.45px;
-    color: $col-white;
-    border-radius: .3rem;
+//about us
 
-    background-color: $col-sec;
-    border: 1px solid $col-sec;
-    padding: 1rem 3rem;
+.about {
 
-    @media only screen and (max-height: 721px){
+    &__top {
+        min-height: 35vh;
+    }
+    &__text {
+        min-height: 22vh;
+        
+    }
+
+    &__main {
+        min-height: 55vh;
+    }
+    &__content {
+    }
+  
+}
+.card-cont {
+    list-style-type: none;
+    
+    &__logo {
+        width: 3rem;  
+    }
+
+    &__icon {
+        color: $col-sec;
+    }
+    &__text {
+        width: 17rem;
+        @media only screen and (max-width: 768px) {
+            width: 100%;
+        }
+
+    }
+    &__title {
+        color: $col-main;
+        font-family: Lato;
+        font-size: 1.6rem;
+        letter-spacing: 0.52px;
+        font-weight: 700;
+        line-height: 2.1em;
+        @media only screen and (max-width: 768px) {
+            font-size: 3rem;
+        }
+    }
+
+    &__subtitle {
+        color: $col-text;
+        letter-spacing: 0.16px;
+        line-height: 1.5em;
         font-size: 1rem;
-        padding: .8rem 1.8rem;
+        @media only screen and (max-width: 768px) {
+            font-size: 1.5rem;
+        }
     }
 }
+
+.text-block {
+
+    &__title {
+        color: $col-main;
+        font-family: Lato;
+        font-size: 2.7rem;
+        font-weight: 700;
+        letter-spacing: 0.44px;
+        line-height: 3.3rem;
+    }
+
+    &__subtitle {
+        color: $col-text;
+        font-size: 1.3rem;
+        letter-spacing: 0.22px;
+        line-height: 2.1rem;
+    }
+}
+
+
 
 
 

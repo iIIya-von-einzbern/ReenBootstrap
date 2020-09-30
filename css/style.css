@@ -205,6 +205,33 @@ body {
   color: #00bc9c;
 }
 
+.main-button {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.45px;
+  color: #fff;
+  background-color: #00bc9c;
+  border: none;
+  padding: 1rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.main-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.5em;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: translateX(-4em) skewX(-45deg);
+  animation: move-light 4s infinite;
+}
+.main-button:hover, .main-button:focus, .main-button:active {
+  outline: none;
+}
+
 .hero__item {
   min-height: 86vh;
   background: #506a85 url("../img/bg.png") center center/cover no-repeat;
@@ -253,23 +280,149 @@ body {
     margin: 0 5rem 0.2rem;
   }
 }
-
-.main-button {
-  font-size: 1.1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.45px;
-  color: #fff;
-  border-radius: 0.3rem;
-  background-color: #00bc9c;
-  border: 1px solid #00bc9c;
-  padding: 1rem 3rem;
+.hero__button {
+  transition: 0.3s;
+  transition-delay: 0.6s;
+}
+.hero__button > span {
+  display: block;
+  position: absolute;
+  background-color: #fff;
+}
+.hero__button > span:nth-child(1) {
+  left: 0;
+  bottom: 0;
+  width: 3px;
+  height: 100%;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s;
+}
+.hero__button > span:nth-child(2) {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s;
+}
+.hero__button > span:nth-child(3) {
+  right: 0;
+  bottom: 0;
+  width: 3px;
+  height: 100%;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s;
+  transition-delay: 0.3s;
+}
+.hero__button > span:nth-child(4) {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 3px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s;
+  transition-delay: 0.3s;
+}
+.hero__button:hover, .hero__button:focus, .hero__button:active {
+  background-color: transparent;
+}
+.hero__button:hover > span:nth-child(1), .hero__button:focus > span:nth-child(1), .hero__button:active > span:nth-child(1) {
+  transform: scaleY(1);
+  transform-origin: bottom;
+  transition: transform 0.3s;
+}
+.hero__button:hover > span:nth-child(2), .hero__button:focus > span:nth-child(2), .hero__button:active > span:nth-child(2) {
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+.hero__button:hover > span:nth-child(3), .hero__button:focus > span:nth-child(3), .hero__button:active > span:nth-child(3) {
+  transform: scaleY(1);
+  transform-origin: bottom;
+  transition: transform 0.3s;
+  transition-delay: 0.3s;
+}
+.hero__button:hover > span:nth-child(4), .hero__button:focus > span:nth-child(4), .hero__button:active > span:nth-child(4) {
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.3s;
+  transition-delay: 0.3s;
 }
 @media only screen and (max-height: 721px) {
-  .main-button {
+  .hero__button {
     font-size: 1rem;
     padding: 0.8rem 1.8rem;
   }
+}
+
+.about__top {
+  min-height: 35vh;
+}
+.about__text {
+  min-height: 22vh;
+}
+.about__main {
+  min-height: 55vh;
+}
+.card-cont {
+  list-style-type: none;
+}
+.card-cont__logo {
+  width: 3rem;
+}
+.card-cont__icon {
+  color: #00bc9c;
+}
+.card-cont__text {
+  width: 17rem;
+}
+@media only screen and (max-width: 768px) {
+  .card-cont__text {
+    width: 100%;
+  }
+}
+.card-cont__title {
+  color: #506a85;
+  font-family: Lato;
+  font-size: 1.6rem;
+  letter-spacing: 0.52px;
+  font-weight: 700;
+  line-height: 2.1em;
+}
+@media only screen and (max-width: 768px) {
+  .card-cont__title {
+    font-size: 3rem;
+  }
+}
+.card-cont__subtitle {
+  color: #73879c;
+  letter-spacing: 0.16px;
+  line-height: 1.5em;
+  font-size: 1rem;
+}
+@media only screen and (max-width: 768px) {
+  .card-cont__subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+.text-block__title {
+  color: #506a85;
+  font-family: Lato;
+  font-size: 2.7rem;
+  font-weight: 700;
+  letter-spacing: 0.44px;
+  line-height: 3.3rem;
+}
+.text-block__subtitle {
+  color: #73879c;
+  font-size: 1.3rem;
+  letter-spacing: 0.22px;
+  line-height: 2.1rem;
 }
 
 ::-webkit-scrollbar-track {
