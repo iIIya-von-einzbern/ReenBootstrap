@@ -1,318 +1,317 @@
 @import "_fonts";
 @import "_variables"; 
+@import "_mixins"; 
 
-* {
+body {
     font-family: "Source Sans Pro";
-    color: $col-text;
 }
-a {
-    color: $col-main;
-    &:hover {
-        
-        color: $col-main;
-    }
-}
-.header {
-}
+/*info section*/
 .header-top {
-    height: 3rem;
+    font-size: .75rem;
     background-color: $col-header;
-    font-size: 12px;
+    min-height: 4vh;
+		&__social {
+            background-color: $col-header;
+        }
+        &__item {    
+            color: $col-main;
+            height: 4vh;
+            transition: $anim-time;
 
-		&__info {
-		}
+            &:hover:nth-child(1), &:active:nth-child(1), &:focus:nth-child(1){
+                background-color: #4668b3;
+                color: $col-white;
+                text-decoration: none;
+                outline: none;
+            }
+
+            &:hover:nth-child(2), &:active:nth-child(2), &:focus:nth-child(2){
+                background-color: #de5745;
+                color: $col-white;
+                text-decoration: none;
+                outline: none;
+            }
+            &:hover:nth-child(3), &:active:nth-child(3), &:focus:nth-child(3){
+                background-color: #2fbbed;
+                color: $col-white;
+                text-decoration: none;
+                outline: none;
+            }
+            &:hover:nth-child(4), &:active:nth-child(4), &:focus:nth-child(4){
+                background-color: #d94348;
+                color: $col-white;
+                text-decoration: none;
+                outline: none;
+            }
+            &:hover:nth-child(5), &:active:nth-child(5), &:focus:nth-child(5){
+                background-color: #3079ff;
+                color: $col-white;
+                text-decoration: none;
+                outline: none;
+            }
+            &:hover:nth-child(6), &:active:nth-child(6), &:focus:nth-child(6){
+                background-color: #eb6397;
+                color: $col-white;
+                text-decoration: none;
+                outline: none;
+            }
+
+        }
+}
+
+.header-info {
+    color: $col-main;
+    transition: $anim-time;
+
 
 		&__email {
+            color: $col-main;
+            transition: $anim-time;
+            &:hover,&:focus,&:active {
+                color: $col-sec;
+                text-decoration: none;
+                outline: none;
+            }
 		}
 
 		&__tel {
-		}
-
-		&__social {
-		}
-
-		&__list {
-            list-style-type: none;
-		}
-
-		&__item {
-            &:hover {
-                
+            color: $col-main;
+            transition: $anim-time;
+            &:hover,&:focus,&:active {
+                color: $col-sec;
+                text-decoration: none;
                 outline: none;
             }
-            &:focus {
-                
-                outline: none;
-            }
-            &:active {
-                
-                outline: none;
-            }
-            & i:hover {
-                color: $col-sec;
-                
-            }
-            & i:focus {
-                color: $col-sec;
-                
-            }
-            & i:active {
-                color: $col-sec;
-                
-            }
-		}
-
-		&__link {
-
-		}
+        }
+    
+    &:hover,&:focus,&:active {
+        color: $col-sec;
+    }
 }
 
-.header-main {
-    height: 6.6rem;
+//menu
+.header {
+    background-color: #fff;
+    padding: 2vh 0;
+    
+    &__toggler {
+        border: none;
+        background: transparent;
+
+        &:focus {
+            outline: none;
+        }
+
+
+        &>.header__icon {
+            width: 22px; 
+            height: 2px;
+            background-color: #B6B6B6;
+            display: block;
+            transition: all 0.2s;
+            margin-top: 4px;
+
+            &:nth-child(1){
+                transform: rotate(45deg);
+                transform-origin: 10% 10%;
+            }
+            &:nth-child(2){
+                opacity: 0;
+            }
+            &:nth-child(3){
+                transform: rotate(-45deg);
+                transform-origin: 10% 90%;
+            }
+        }
+        &.collapsed>.header__icon {
+            &:nth-child(1){
+                transform: rotate(0);
+            }
+            &:nth-child(2){
+                opacity: 1
+            }
+            &:nth-child(3){
+                transform: rotate(0);
+            }
+        }
+    }
 
     &__logo {
+        &:hover,&:focus,&:active {
+            outline: none;
+        }
     }
-
-    &__nav {
-    }
-
-    &__list {
-        list-style: none;
-    }
-
-    &__item {
-    }
-
     &__link {
         color: $col-main;
-        font-size: 15px;
+        font-size: 0.9rem;
         font-weight: 700;
         text-transform: uppercase;
 
-        position: relative;
-        transition: 0.3s;
+        transition: $anim-time;
 
-        &::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            right: 100%;
-            bottom: -10px;
-            background-color: $col-sec;
-            height: 1px;
-            transition: 0.3s;
-            
-        }
-        &:hover::before {
-            right: 0;
-        }
-        &:focus::before {
-            right: 0;
-        }
-        &:active::before {
-            right: 0;
-        }
-
-        &:hover {
-            text-decoration: none;
+        &:hover,&:focus,&:active {
             color: $col-sec;
-        }
-        &:focus {
-            text-decoration: none;
-            color: $col-sec;
-        }
-        &:active {
-            text-decoration: none;
-            color: $col-sec;
+            background-color: $col-header;
+            border-radius: .3rem;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            outline: none;
         }
     }
 
-    &__search {
-        font-size: 12px;
-    }
-    &__btn {
-        
-        background: none;
+    &-mega {
+        background-color: $col-header;
         border: none;
-        &:hover {
-            outline: none;
-            color: $col-sec;
-        }
-        &:focus {
-            outline: none;
-            color: $col-sec;
-        }
-        &:active {
-            outline: none;
-            color: $col-sec;
-        }
-        & i:hover {
+        margin: 0;
+        border-radius: .3rem;
+        position: static;
+        width: 100%;
+        &__item {
             
-            color: $col-sec;
-        }
-        & i:focus {
             
-            color: $col-sec;
-        }
-        & i:active {
-            
-            color: $col-sec;
         }
     }
 }
 
-.banner {
-    height: 880px;
-    background:$col-main url('../img/bg.png') 0 0 / cover no-repeat;
-    //background-color: $col-main;
-    &__content {
-    }
-    &__text {
-        height: 35%;
-        width: 60rem;
-    }
-    &__title {
-        color: $col-white;
-        font-family: "Lato";
-        font-size: 78px;
-        font-weight: 900;
-        letter-spacing: 4.68px;
-        line-height: 88px;
-        text-transform: uppercase;
 
-    }
-
-    &__subtitle {
-        color: #9dabbb;
-        font-family: "Lato - Black";
-        font-size: 24px;
-        font-weight: 400;
-        letter-spacing: 0.48px;
-        line-height: 33px;
-        
-    }
-
-    &__btn {
-        padding: 1.5rem 5rem;
-    }
-}
-.button-main {
-    color: $col-white;
-    background-color: $col-sec;
+.drop-head {
+    background-color: $col-header;
     border: none;
-    font-size: 18px;
-    font-weight: 700;
-    text-transform: uppercase;
-    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.15);
-
-    position: relative;
-    overflow: hidden;
-    
-    &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 1.5em;
-        height: 100%;
-        background-color: rgba(#fff, 0.6);
-        transform: translateX(-4em) skewX(-45deg);
-        animation: move-light 3.5s linear infinite;
-        
-    }
-    &:hover,&:focus,&:active {
-        outline: none;
-        animation: main-button 1s linear infinite;
-    }
-}
-.about {
-
-    &__top {
-        height: 18rem;
-    }
-
-    &__text {
-    }
-
-    &__bottom {
-        height: 23rem;
-    }
-
-    &__list {
-        list-style-type: none;
-    }
+    margin: 0;
+    border-radius: .3rem;
 
     &__item {
-    }
-
-    &__icon {
-
-    }
-
-    &__content {
-    }
-}
-
-.desc-block {
-    width: 48rem;
-    &__title {
         color: $col-main;
-        font-family: Lato;
-        font-size: 44px;
+        font-size: 0.9rem;
         font-weight: 700;
-        letter-spacing: 0.44px;
-        line-height: 54px;
-    }
+        
+        text-transform: uppercase;
+        transition: $anim-time;
+        padding: 0.5rem 1.5rem;
 
-    &__subtitle {
-        font-size: 22px;
-        font-weight: 400;
-    }
-}
-.cards {
-
-    &__title {
-        font-family: Lato;
-        font-size: 26px;
-        font-weight: 700;
-        letter-spacing: 0.52px;
-        line-height: 34px;
-    }
-    &__subtitle {
-        font-size: 16px;
-        letter-spacing: 0.16px;
-        line-height: 25px;
-    }
-}
-.works {
-    background-color: $col-header;
-    height: 1270px;
-
-    &__content {
-    }
-
-    &__top {
-        height: 306px;
-    }
-
-    &__slider {
-        height: (1270px-306px);
-    }
-}
-.call {
-    height: 483px;
-
-    &__btn {
-        font-size: 15px;
-        padding: 1rem 1.7rem;
+        &:hover,&:focus,&:active {
+            background-color: $col-sec;
+            color: $col-white;
+        }
     }
 }
 
 
 
+//search in main nav
+.search-focus {
+    position: relative;
+    width: 15rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    
+    &>#search-focus__bar {
+        // margin-left: auto;
+        width: 1rem;
+        height: 100%;
+        background: #fff;
+        border: 1px solid transparent;
+        font-size: .8rem;
+        float: left;
+        color: #262626;
+        padding-left: 2.1rem;
+        border-radius: .3rem;
+        color: #000;
+
+        transition: width .55s ease;
+
+        &:focus,&:active {
+            border-color: $col-sec;
+            width: 15rem;
+            outline: none;
+        }
+    }
+    &:hover>#search-focus__bar{
+        border-color: $col-main;
+        width: 15rem;
+    }
+    &>#search-focus__icon {
+        position: absolute;
+        right: calc(12% - .8rem);
+        z-index: 1;
+        color: $col-main;
+        background-color: transparent;
+        border: none;
+        transition: $anim-time;
+        
+        @media only screen and (max-width: 768px) {
+            left: 0;
+            top: -18%;
+        }
+        &:hover,&:focus,&:active {
+            outline: none;
+            color: $col-sec;
+        }
+    }
+}
+//Hero
+
+.hero {
+    &__item {
+        min-height: 86vh;
+        background:$col-main url('../img/bg.png') center center /cover  no-repeat;
+    }
+    &__indicators{
+
+        &>li {
+            border-radius: 100%;
+            width: 1rem;
+            height: 1rem;
+            
+            &.active {
+                background-color: $col-sec;
+            }
+        }
+    }
+    
+	&__title {
+        font-family: "Lato";
+        font-size: 4.9rem;
+        font-weight: 900;
+        line-height: 5.5rem;
+        letter-spacing: 4.68px;
+        text-transform: uppercase;
+        color: $col-white;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 3rem;
+        }
+	}
+
+	&__subtitle {
+        margin: 0 5rem 2rem;
+        font-size: 1.5rem;
+        letter-spacing: 0.48px;
+        line-height: 2rem;
+        color: #a3b1bf;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 1.2rem;
+        }
+	}
+}
+.main-button {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.45px;
+    color: $col-white;
+    border-radius: .3rem;
+
+    background-color: $col-sec;
+    border: 1px solid $col-sec;
+    padding: 1rem 3rem;
+}
 
 
 
+
+
+//scroll effects
 ::-webkit-scrollbar-track
 {
     box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
@@ -330,6 +329,7 @@ a {
     background-color: $col-sec;
 }
 
+//animations
 @keyframes move-light {
     0% {
         transform: translateX(-4em) skewX(-45deg);
