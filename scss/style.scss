@@ -486,6 +486,104 @@ body {
         line-height: 2.1rem;
     }
 }
+//Last Works
+
+.works {
+    background-color: $col-header;
+
+    &__top {
+        min-height: 30vh;
+    }
+
+    &__text {
+        min-height: 15vh;
+    }
+
+    &__main {
+        padding-top: 5vh;
+    }
+    &__item {
+        margin: 1vh 0;
+        padding: 0;
+    }
+    &__min {
+        
+        padding-top: 5vh;
+    }
+}
+.card-slide {
+    background-color: $col-white;
+    
+    list-style-type: none;
+    overflow: hidden;
+    min-height: 40vh;
+    &__img {
+        color: transparent;
+        height: 70%;
+        width: 100%;
+        
+        &_fir{
+            background:$col-sec url('../img/works-block-1.png') center center /cover  no-repeat;
+        }
+        &_sec{
+            background:$col-sec url('../img/works-block-2.png') center center /cover  no-repeat;
+        }
+    }
+    &__text {
+        height: 30%;
+    }
+    &__title {
+        color: $col-main;
+        font-family: Lato;
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 0.44px;
+        line-height: 1.6em;
+    }
+
+    &__subtitle {
+        color: $col-text;
+        font-size: 0.8rem;
+        letter-spacing: 0.28px;
+        line-height: 1.1rem;
+    }
+}
+
+
+.card-min {
+
+    color: transparent;
+
+	&__item {
+        min-height: 12vh;
+        list-style-type: none;
+        &:nth-child(1) {
+            background:$col-sec url('../img/works-blockmin-1.png') center center /cover  no-repeat;
+        }
+        &:nth-child(2) {
+            background:$col-sec url('../img/works-blockmin-2.png') center center /cover  no-repeat;
+        }
+        &:nth-child(3) {
+            background:$col-sec url('../img/works-blockmin-3.png') center center /cover  no-repeat;
+        }
+        &:nth-child(4) {
+            background:$col-sec url('../img/works-blockmin-4.png') center center /cover  no-repeat;
+        }
+	}
+}
+
+//Want to work
+.want {
+    background-color: $col-white;
+
+
+    &__top {
+        min-height: 30vh;
+    }
+
+    &__text {
+    }
+}
 
 
 
