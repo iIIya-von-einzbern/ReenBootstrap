@@ -157,19 +157,6 @@ body {
             outline: none;
         }
     }
-
-    &-mega {
-        background-color: $col-header;
-        border: none;
-        margin: 0;
-        border-radius: .3rem;
-        position: static;
-        width: 100%;
-        &__item {
-            
-            
-        }
-    }
 }
 
 
@@ -254,7 +241,12 @@ body {
     &__item {
         min-height: 86vh;
         background:$col-main url('../img/bg.png') center center /cover  no-repeat;
+
+        @media only screen and (max-height: 600px){
+           min-height: 120vh
+        }
     }
+
     &__indicators{
 
         &>li {
@@ -272,7 +264,7 @@ body {
         font-family: "Lato";
         font-size: 4.9rem;
         font-weight: 900;
-        line-height: 5.5rem;
+        line-height: 4rem;
         letter-spacing: 4.68px;
         text-transform: uppercase;
         color: $col-white;
@@ -292,7 +284,11 @@ body {
         @media only screen and (max-width: 768px) {
             font-size: 1.2rem;
         }
-	}
+        @media only screen and (max-height: 721px){
+            margin: 0 5rem .2rem;
+        }
+    }
+
 }
 .main-button {
     font-size: 1.1rem;
@@ -305,6 +301,11 @@ body {
     background-color: $col-sec;
     border: 1px solid $col-sec;
     padding: 1rem 3rem;
+
+    @media only screen and (max-height: 721px){
+        font-size: 1rem;
+        padding: .8rem 1.8rem;
+    }
 }
 
 

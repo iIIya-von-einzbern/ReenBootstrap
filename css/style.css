@@ -137,14 +137,7 @@ body {
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   outline: none;
 }
-.header-mega {
-  background-color: #f5f7fa;
-  border: none;
-  margin: 0;
-  border-radius: 0.3rem;
-  position: static;
-  width: 100%;
-}
+
 .drop-head {
   background-color: #f5f7fa;
   border: none;
@@ -216,6 +209,11 @@ body {
   min-height: 86vh;
   background: #506a85 url("../img/bg.png") center center/cover no-repeat;
 }
+@media only screen and (max-height: 600px) {
+  .hero__item {
+    min-height: 120vh;
+  }
+}
 .hero__indicators > li {
   border-radius: 100%;
   width: 1rem;
@@ -228,7 +226,7 @@ body {
   font-family: "Lato";
   font-size: 4.9rem;
   font-weight: 900;
-  line-height: 5.5rem;
+  line-height: 4rem;
   letter-spacing: 4.68px;
   text-transform: uppercase;
   color: #fff;
@@ -250,6 +248,11 @@ body {
     font-size: 1.2rem;
   }
 }
+@media only screen and (max-height: 721px) {
+  .hero__subtitle {
+    margin: 0 5rem 0.2rem;
+  }
+}
 
 .main-button {
   font-size: 1.1rem;
@@ -261,6 +264,12 @@ body {
   background-color: #00bc9c;
   border: 1px solid #00bc9c;
   padding: 1rem 3rem;
+}
+@media only screen and (max-height: 721px) {
+  .main-button {
+    font-size: 1rem;
+    padding: 0.8rem 1.8rem;
+  }
 }
 
 ::-webkit-scrollbar-track {
